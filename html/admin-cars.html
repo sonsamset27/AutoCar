@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý xe</title>
+    <link rel="stylesheet" href="../css/admin-style.css">
+    <script src="../javascript/defaultData.js" defer></script>
+    <script src="../javascript/data.js" defer></script>
+    <script src="../javascript/admin-cars.js" defer></script>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>AutoCar</h1>
+        <nav>
+            <ul>
+                <li><a href="../html/admin-account.html">Quản lý tài khoản</a></li>
+                <li class="bold"><a href="#">Quản lý xe</a></li>
+                <li><a href="../html/admin-forms.html">Quản lý liên hệ</a></li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <button>Đăng xuất</button>
+        </div>
+    </header>
+
+    <div id="hero">
+        <div class="hero-header">
+            <h2>Danh sách xe</h2>
+            <button class="add-car-btn">Thêm xe</button>
+        </div>
+
+        <div class="hero-carList"></div>
+    </div>
+</div>
+
+<!-- MODAL -->
+<div id="car-modal" class="modal">
+    <div class="modal-content">
+        <h3>Thông tin xe</h3>
+
+        <input type="text" id="brand" placeholder="Hãng xe">
+        <input type="text" id="model" placeholder="Model">
+        <input type="number" id="year" placeholder="Năm sản xuất">
+        <input type="number" id="price" placeholder="Giá">
+        <input type="text" id="transmission" placeholder="Hộp số">
+        <textarea id="description" placeholder="Mô tả chi tiết"></textarea>
+
+        <!-- Upload ảnh -->
+        <input type="file" id="car-images" multiple accept="image/*">
+        <div class="image-preview"></div>
+
+        <div class="modal-actions">
+            <button id="save-car">Lưu</button>
+            <button id="close-car-modal">Huỷ</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
