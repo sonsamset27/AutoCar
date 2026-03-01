@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Account</title>
+    <link rel="stylesheet" href="../css/admin-style.css">
+    <script src="../javascript/defaultData.js" defer></script>
+    <script src="../javascript/data.js" defer></script>
+    <script src="../javascript/admin-account.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AutoCar</h1>
+            <nav>
+                <ul>
+                    <li ><a href="../html/admin-account.html">Quản lý tài khoản</a></li>
+                    <li ><a href="../html/admin-cars.html">Quản lý xe</a></li>
+                    <li class="bold"><a href="../html/admin-forms.html">Quản lý liên hệ</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <button>Đăng xuất</button>
+            </div>
+        </header>
+        <div id="hero">
+            <div class="hero-header">
+                <h2>Danh sách tài khoản</h2>
+                <button class="add-acc-btn">Thêm tài khoản</button>
+            </div>
+            <div class="hero-userList"></div>
+        </div>
+    </div>
+    <div id="user-modal" class="modal">
+        <div class="modal-content">
+            <h3>Thêm tài khoản</h3>
+            <input type="text" id="new-username" placeholder="Tên đăng nhập">
+            <input type="password" id="new-password" placeholder="Mật khẩu">
+            <div class="modal-actions">
+                <button id="save-user">Lưu</button>
+                <button id="close-modal">Huỷ</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
