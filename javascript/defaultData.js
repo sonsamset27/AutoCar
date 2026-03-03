@@ -25,12 +25,18 @@ const defaultCars = [
 ];
 
 const defaultInfors = [
-  {
-    id: 1,
-    carName: "Toyota",
-    model: "Camry",
-    name: "Sơn Vũ",
-    phone: "0865790134",
-    note: "Ngày 8/3 mình qua xem xe"
-  }
+    {
+        id: 1,
+        name: "Nguyễn Văn A",
+        phone: "0909123456",
+        message: "Tôi muốn tư vấn xe BMW",
+        status: "not_called"
+    },
+    {
+        id: 2,
+        name: "Trần Thị B",
+        phone: "0912345678",
+        message: "Giá xe Mercedes bao nhiêu?",
+        status: "called"
+    }
 ];

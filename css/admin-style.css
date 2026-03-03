@@ -319,6 +319,23 @@ header nav ul li a:hover {
     flex-wrap: wrap;
 }
 
+.toggle-status {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.toggle-status {
+    background: #eee;
+}
+
+.toggle-status:hover {
+    background: #111;
+    color: white;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .carList-box {
