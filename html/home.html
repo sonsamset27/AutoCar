@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AutoCar</title>
+    <link rel="stylesheet" href="../css/home.css" />
+    <link rel="stylesheet" href="../css/home-responsive.css">
+    <script src="../javascript/defaultData.js" defer></script>
+    <script src="../javascript/data.js" defer></script>
+    <script src="../javascript/cars.js" defer></script>
+    <script src="../javascript/home.js" defer></script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>AutoCar</h1>
+        <nav>
+        <ul>
+            <li class="bold"><a href="#">Trang chủ</a></li>
+            <li><a href="../html/cars.html">Danh sách xe</a></li>
+        </ul>
+        </nav>
+        <div class="header-right">
+        <button class="login-btn" onclick="location.href='./login.html'">Đăng nhập</button>
+        </div>
+    </header>
+
+    <div id="hero">
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Showroom ô tô uy tín</h2>
+                <p>Hơn 300+ xe chất lượng cao</p>
+                <p>Lựa chọn chiếc xe phù hợp với nhu cầu và ngân sách của bạn từ hơn 300 mẫu xe chất lượng</p>
+                <button onclick="location.href='../html/cars.html'">Xem danh sách xe</button>
+            </div>
+        </section>
+
+        <section class="new-cars">
+            <div class="section-title">
+                <h2>Xe mới về</h2>
+                <p>Những mẫu xe mới nhất tại AutoCar</p>
+            </div>
+            <div class="cars-grid" id="homeCars"></div>
+            <button onclick="location.href='../html/cars.html'">Xem tất cả xe</button>
+        </section>
+
+        <section class="about">
+        <div class="about-wrapper">
+            <div class="about-img">
+                <img src="../asset/showroom.jpg" />
+            </div>
+            <div class="about-text">
+                <h2>Về AutoCar</h2>
+                <p>AutoCar là showroom ô tô uy tín chuyên cung cấp các dòng xe chất lượng cao, đáp ứng đa dạng nhu cầu của khách hàng từ xe gia đình, xe kinh doanh cho đến các dòng xe cao cấp. Với mong muốn mang đến cho khách hàng những lựa chọn tốt nhất, AutoCar luôn chú trọng tuyển chọn kỹ lưỡng từng chiếc xe trước khi đưa đến tay người mua.</p>
+                <p>Trải qua hơn 10 năm kinh nghiệm trong lĩnh vực ô tô, AutoCar đã xây dựng được uy tín và sự tin tưởng từ hàng nghìn khách hàng trên khắp cả nước. Chúng tôi không chỉ cung cấp xe mà còn mang đến một trải nghiệm mua xe minh bạch, chuyên nghiệp và tận tâm.</p>
+                <ul>
+                    <li>300+ xe luôn sẵn sàng</li>
+                    <li>Hỗ trợ trả góp</li>
+                    <li>Bảo hành uy tín</li>
+                </ul>
+                <p>Với phương châm <strong>“Uy tín – Chất lượng – Minh bạch”</strong>, AutoCar cam kết mang đến những chiếc xe tốt nhất cùng dịch vụ chuyên nghiệp, giúp khách hàng dễ dàng tìm được chiếc xe phù hợp với nhu cầu và ngân sách của mình.</p>
+            </div>
+        </div>
+        </section>
+
+        <section class="commitments">
+            <div class="section-title">
+                <h2>Cam kết của AutoCar</h2>
+            </div>
+            <div class="commit-grid">
+                <div class="commit-card">
+                    <h3>Xe chuẩn chất lượng</h3>
+                    <p>Kiểm định kỹ trước khi bán</p>
+                </div>
+                <div class="commit-card">
+                    <h3>Giá minh bạch</h3>
+                    <p>Không phát sinh chi phí</p>
+                </div>
+                <div class="commit-card">
+                    <h3>Hỗ trợ trả góp</h3>
+                    <p>Lãi suất tốt</p>
+                </div>
+                <div class="commit-card">
+                    <h3>Bảo hành uy tín</h3>
+                    <p>Chính sách hậu mãi</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="process">
+            <div class="section-title">
+                <h2>Quy trình mua xe</h2>
+            </div>
+            <div class="process-grid">
+                <div class="step">
+                    <span>1</span>
+                    <h3>Chọn xe</h3>
+                    <p>Xem danh sách xe</p>
+                </div>
+                <div class="step">
+                    <span>2</span>
+                    <h3>Liên hệ</h3>
+                    <p>Nhân viên tư vấn</p>
+                </div>
+                <div class="step">
+                    <span>3</span>
+                    <h3>Lái thử</h3>
+                    <p>Kiểm tra xe</p>
+                </div>
+                <div class="step">
+                    <span>4</span>
+                    <h3>Nhận xe</h3>
+                    <p>Ký hợp đồng</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="feedback">
+            <div class="section-title">
+                <h2>Khách hàng nói gì</h2>
+            </div>
+
+            <div class="feedback-grid">
+
+                <div class="feedback-card">
+                    <div class="user">
+                        <img src="../asset/user1.webp" alt="">
+                        <div>
+                            <h4>Sơn Vũ</h4>
+                        </div>
+                    </div>
+                    <p>"Xe đúng mô tả, nhân viên tư vấn rất nhiệt tình."</p>
+                </div>
+
+                <div class="feedback-card">
+                    <div class="user">
+                        <img src="../asset/user2.jpg" alt="">
+                        <div>
+                            <h4>Quang Nam</h4>
+                        </div>
+                    </div>
+                    <p>"Thủ tục trả góp nhanh và đơn giản."</p>
+                </div>
+
+                <div class="feedback-card">
+                    <div class="user">
+                        <img src="../asset/user3.jpg" alt="">
+                        <div>
+                            <h4>Phạm Tuấn</h4>
+                        </div>
+                    </div>
+                    <p>"Showroom uy tín, xe đẹp."</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2>Liên hệ AutoCar</h2>
+                    <p>Hotline: 0900000000</p>
+                    <p>Email: autocar@gmail.com</p>
+                    <p>Địa chỉ: Hà Nội</p>
+                </div>
+                <form class="contact-form" id="contact-form">
+                    <input class="name" type="text" placeholder="Tên" />
+                    <input class="phone" type="text" placeholder="Số điện thoại" />
+                    <textarea class="message" placeholder="Nội dung"></textarea>
+                    <button>Gửi liên hệ</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+        <div>
+            <h3>AutoCar</h3>
+            <p>Showroom ô tô uy tín hàng đầu Việt Nam</p>
+        </div>
+        <div>
+            <h4>Liên kết</h4>
+            <p><a href="#">Trang chủ</a></p>
+            <p><a href="../html/cars.html">Danh sách xe</a></p>
+        </div>
+        <div>
+            <h4>Liên hệ</h4>
+            <p>Hotline: 0999999999</p>
+            <p>Email: autocar@gmail.com</p>
+        </div>
+        </div>
+        <p class="copyright">© 2026 AutoCar</p>
+    </footer>
+</div>
+</body>
+</html>

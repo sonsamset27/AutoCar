@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danh sách xe</title>
+    <link rel="stylesheet" href="../css/customer-style.css" />
+    <link rel="stylesheet" href="../css/customer-reponsive.css">
+    <script src="../javascript/defaultData.js" defer></script>
+    <script src="../javascript/data.js" defer></script>
+    <script src="../javascript/cars.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>AutoCar</h1>
+      <nav>
+        <ul>
+          <li><a href="../html/home.html">Trang chủ</a></li>
+          <li class="bold"><a href="#">Danh sách xe</a></li>
+        </ul>
+      </nav>
+      <div class="header-right">
+        <button class="login-btn" onclick="location.href='./login.html'">Đăng nhập</button>
+      </div>
+    </header>
+
+    <div id="hero">
+      <div class="hero-left">
+        <h3>Bộ lọc xe</h3>
+        <div class="filter-group">
+          <h4>Hãng xe</h4>
+          <label><input type="checkbox" class="brand-filter" value="Toyota"> Toyota</label>
+          <label><input type="checkbox" class="brand-filter" value="BMW"> BMW</label>
+          <label><input type="checkbox" class="brand-filter" value="Mercedes"> Mercedes</label>
+          <label><input type="checkbox" class="brand-filter" value="Honda"> Honda</label>
+          <label><input type="checkbox" class="brand-filter" value="Mazda"> Mazda</label>
+          <label><input type="checkbox" class="brand-filter" value="Hyundai"> Hyundai</label>
+          <label><input type="checkbox" class="brand-filter" value="Kia"> Kia</label>
+          <label><input type="checkbox" class="brand-filter" value="Ford"> Ford</label>
+        </div>
+
+        <div class="filter-group">
+          <h4>Sắp xếp theo giá</h4>
+          <select id="priceSort">
+              <option value="">-- Chọn --</option>
+              <option value="asc">Giá thấp → cao</option>
+              <option value="desc">Giá cao → thấp</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <h4>Năm sản xuất</h4>
+          <input type="number" id="year" placeholder="Ví dụ: 2022"/>
+        </div>
+
+        <div class="filter-group">
+            <h4>Hộp số</h4>
+            <label>
+                <input type="checkbox" class="transmission-filter" value="Tự động">
+                Tự động
+            </label>
+            <label>
+                <input type="checkbox" class="transmission-filter" value="Số sàn">
+                Số sàn
+            </label>
+        </div>
+        <div class="filter-btns">
+          <button id="applyFilter">Áp dụng</button>
+          <button id="clearFilter">Xóa bộ lọc</button>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="cars-header">
+          <div>
+            <h2>Danh sách xe hiện đang bán</h2>
+            <p id="carCount"></p>
+          </div>
+        </div>
+        <div class="cars-grid"></div>
+        <div class="load-more">
+          <span id="loadMore">Xem thêm</span>
+        </div>
+      </div>
+
+    </div>
+    
+    <footer>
+        <div class="footer-grid">
+          <div>
+              <h3>AutoCar</h3>
+              <p>Showroom ô tô uy tín hàng đầu Việt Nam</p>
+          </div>
+          <div>
+              <h4>Liên kết</h4>
+              <p><a href="#">Trang chủ</a></p>
+              <p><a href="../html/cars.html">Danh sách xe</a></p>
+          </div>
+          <div>
+              <h4>Liên hệ</h4>
+              <p>Hotline: 0999999999</p>
+              <p>Email: autocar@gmail.com</p>
+          </div>
+        </div>
+        <p class="copyright">© 2026 AutoCar</p>
+    </footer>
+  </div>
+  
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <button class="popup-close" id="closePopup">✕</button>
+      <div id="popupBody"></div>
+    </div>
+  </div>
+</body>
+</html>

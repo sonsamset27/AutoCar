@@ -19,8 +19,6 @@ const renderUsers = () => {
     `).join("");
 };
 
-
-
 // Bật tắt pop up thêm, sửa account
 
 const openModal = () => {
@@ -30,7 +28,6 @@ const openModal = () => {
 const closeModal = () => {
     modal.style.display = "none";
 };
-
 
 // thêm tài khoản
 const addUser = (username, password) => {
@@ -51,7 +48,6 @@ const addUser = (username, password) => {
     return true;
 };
 
-
 // Cập nhật tài khoản
 const updateUser = (id, username, password) => {
     const user = users.find(u => u.id === id);
@@ -61,12 +57,10 @@ const updateUser = (id, username, password) => {
     user.password = password;
 };
 
-
 // Xoá tài khoản
 const deleteUser = (id) => {
     users = users.filter(user => user.id !== id);
 };
-
 
 // Lưu thông tin trong form popup
 const handleSave = () => {
@@ -95,7 +89,6 @@ const handleSave = () => {
     document.querySelector("#new-password").value = "";
 };
 
-
 // Kiểm tra sự kiện bấm
 const handleUserListClick = (e) => {
 
@@ -111,18 +104,14 @@ const handleUserListClick = (e) => {
 
     if (e.target.classList.contains("edit-acc")) {
         const user = users.find(u => u.id === id);
-
         editId = id;
-
         document.querySelector("#new-username").value = user.username;
         document.querySelector("#new-password").value = user.password;
-
         openModal();
     }
 };
 
-
-
+// Bắt sự kiện click
 addBtn.addEventListener("click", () => {
     editId = null;
     openModal();

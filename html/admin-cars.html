@@ -5,57 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản lý xe</title>
     <link rel="stylesheet" href="../css/admin-style.css">
+    <link rel="stylesheet" href="../css/admin-responsive.css">
     <script src="../javascript/defaultData.js" defer></script>
     <script src="../javascript/data.js" defer></script>
+    <script src="../javascript/auth.js" defer></script>
     <script src="../javascript/admin-cars.js" defer></script>
 </head>
 <body>
-<div class="container">
-    <header>
-        <h1>AutoCar</h1>
-        <nav>
-            <ul>
-                <li><a href="../html/admin-account.html">Quản lý tài khoản</a></li>
-                <li class="bold"><a href="#">Quản lý xe</a></li>
-                <li><a href="../html/admin-forms.html">Quản lý liên hệ</a></li>
-            </ul>
-        </nav>
-        <div class="header-right">
-            <button>Đăng xuất</button>
-        </div>
-    </header>
+    <div class="container">
+        <header>
+            <h1>AutoCar</h1>
+            <nav>
+                <ul>
+                    <li><a href="../html/admin-account.html">Quản lý tài khoản</a></li>
+                    <li class="bold"><a href="#">Quản lý xe</a></li>
+                    <li><a href="../html/admin-forms.html">Quản lý liên hệ</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <button id="logout-btn">Đăng xuất</button>
+            </div>
+        </header>
 
-    <div id="hero">
-        <div class="hero-header">
-            <h2>Danh sách xe</h2>
-            <button class="add-car-btn">Thêm xe</button>
-        </div>
+        <div id="hero">
+            <div class="hero-header">
+                <h2>Danh sách xe</h2>
+                <button class="add-car-btn">Thêm xe</button>
+            </div>
 
-        <div class="hero-carList"></div>
-    </div>
-</div>
-
-<!-- MODAL -->
-<div id="car-modal" class="modal">
-    <div class="modal-content">
-        <h3>Thông tin xe</h3>
-
-        <input type="text" id="brand" placeholder="Hãng xe">
-        <input type="text" id="model" placeholder="Model">
-        <input type="number" id="year" placeholder="Năm sản xuất">
-        <input type="number" id="price" placeholder="Giá">
-        <input type="text" id="transmission" placeholder="Hộp số">
-        <textarea id="description" placeholder="Mô tả chi tiết"></textarea>
-
-        <!-- Upload ảnh -->
-        <input type="file" id="car-images" multiple accept="image/*">
-        <div class="image-preview"></div>
-
-        <div class="modal-actions">
-            <button id="save-car">Lưu</button>
-            <button id="close-car-modal">Huỷ</button>
+            <div class="hero-carList"></div>
         </div>
     </div>
-</div>
+
+    <!-- MODAL -->
+    <div id="car-modal" class="modal">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h3>Thông tin xe</h3>
+            </div>
+
+            <div class="modal-form">
+
+                <div class="form-group">
+                    <label>Hãng xe</label>
+                    <input type="text" id="brand" placeholder="VD: Toyota">
+                </div>
+
+                <div class="form-group">
+                    <label>Model</label>
+                    <input type="text" id="model" placeholder="VD: Camry">
+                </div>
+
+                <div class="form-group">
+                    <label>Năm sản xuất</label>
+                    <input type="number" id="year" placeholder="2024">
+                </div>
+
+                <div class="form-group">
+                    <label>Giá</label>
+                    <input type="number" id="price" placeholder="VNĐ">
+                </div>
+
+                <div class="form-group">
+                    <label>Hộp số</label>
+                    <input type="text" id="transmission" placeholder="Automatic / Manual">
+                </div>
+
+                <div class="form-group full">
+                    <label>Mô tả</label>
+                    <textarea id="description" placeholder="Mô tả chi tiết xe"></textarea>
+                </div>
+
+                <div class="form-group full">
+                    <label>Ảnh xe</label>
+                    <input type="file" id="car-images" multiple accept="image/*">
+                    <div class="image-preview"></div>
+                </div>
+
+            </div>
+
+            <div class="modal-actions">
+                <button class="cancel-btn" id="close-car-modal">Huỷ</button>
+                <button class="save-btn" id="save-car">Lưu xe</button>
+            </div>
+
+        </div>
+    </div>
 </body>
 </html>

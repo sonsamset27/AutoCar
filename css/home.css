@@ -1,0 +1,488 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #0f172a;
+    --accent: #c6a75e;
+    --accent-soft: #f6f1e5;
+
+    --bg: #f5f6f8;
+    --border: #e5e7eb;
+    --text: #1f2937;
+
+    --card: #ffffff;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.container{
+  width:100%;
+}
+
+#hero{
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  /* margin-top: 50px; */
+}
+
+a {
+    text-decoration: none;
+    color: var(--text);
+    transition: 0.25s;
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+ul {
+    display: flex;
+    gap: 50px;
+    list-style: none;
+}
+
+section {
+    padding: 90px 80px;
+    background: white;
+}
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px 80px;
+    background:white;
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    z-index:100;
+
+    h1{
+        font-size:26px;
+        font-weight:700;
+        letter-spacing:1px;
+    }
+
+    ul{
+        display:flex;
+        gap:60px;
+        list-style:none;
+        font-size:16px;
+    }
+
+    a{
+        text-decoration:none;
+        color:var(--text);
+        padding-bottom:4px;
+        transition:.25s;
+
+        &:hover{
+        border-bottom:2px solid var(--accent);
+        }
+    }
+
+    .bold{
+        font-weight:600;
+    }
+}
+
+.login-btn{
+    padding:8px 18px;
+    font-size:15px;
+
+    background:white;
+    border:1px solid var(--border);
+    border-radius:6px;
+
+    transition:.25s;
+
+    &:hover{
+        background:var(--primary);
+        color:white;
+    }
+}
+
+/* Giới thiệu */
+.hero {
+    height: 480px;
+
+    background:
+        linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+        url("../asset/background-home.jpg") center / cover no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+
+    text-align: center;
+    color: white;
+
+    h2 {
+        font-size: 60px;
+        margin-bottom: 10px;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 13px 28px;
+        border: none;
+        border-radius: 8px;
+        background: var(--accent);
+        color: white;
+        cursor: pointer;
+        transition: 0.25s;
+    }
+
+    button:hover {
+        transform: translateY(-2px);
+    }
+}
+
+/* Xe mới về */
+.new-cars{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+
+        h2 {
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+    }
+    button {
+        max-width: 300px;
+        padding: 20px 30px;
+        border: none;
+        border-radius: 8px;
+        background: var(--accent);
+        color: white;
+        cursor: pointer;
+        transition: 0.25s;
+        margin-top: 20px;
+    }
+    
+    .cars-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 30px;
+        width: 100%;
+    }
+}
+
+.car-card {
+    background: var(--card);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: 0.25s;
+
+    &:hover {
+        transform: translateY(-6px);
+    }
+
+    img {
+        width: 100%;
+        height: 210px;
+        object-fit: cover;
+    }
+
+    .car-info {
+        padding: 18px;
+    }
+
+    h3 {
+        margin-bottom: 6px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .car-price {
+        margin-top: 10px;
+        color: var(--accent);
+        font-weight: 600;
+    }
+}
+
+/* Giới thiệu */
+.about-wrapper {
+  display: flex;
+  gap: 50px;
+
+  .about-img {
+    display: flex;
+    align-items: center;
+    img {
+        width: 700px;
+        border-radius: 12px;
+    }
+  }
+  
+  .about-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+
+    h2{
+        font-size: 60px;
+    }
+    ul{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        font-weight: 700;
+        list-style:inside;
+    }
+  }
+}
+
+/* Cam kết */
+.commitments{
+    padding:80px 80px;
+    display:flex;
+    flex-direction:column;
+    gap:60px;
+
+    .section-title{
+        text-align:center;
+
+        h2{
+            font-size:48px;
+        }
+    }
+
+    .commit-grid{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:40px;
+    }
+
+    .commit-card{
+        background:var(--card);
+        padding:40px;
+        border-radius:12px;
+        border:1px solid var(--border);
+
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+
+        transition:.3s;
+
+        &:hover{
+            transform:translateY(-6px);
+            box-shadow:0 10px 25px rgba(0,0,0,.08);
+        }
+
+        h3{
+            font-size:22px;
+        }
+
+        p{
+            color:#6b7280;
+        }
+    }
+}
+
+/* Quá trình mua xe */
+.process{
+    padding:80px 80px;
+    display:flex;
+    flex-direction:column;
+    gap:60px;
+
+    .section-title{
+        text-align:center;
+        h2{
+            font-size:48px;
+        }
+    }
+    .process-grid{
+        display:grid;
+        grid-template-columns:repeat(4,1fr);
+        gap:40px;
+    }
+    .step{
+        background:var(--card);
+        padding:40px;
+        border-radius:12px;
+        border:1px solid var(--border);
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+        text-align:center;
+        transition:.3s;
+
+        &:hover{
+            transform:translateY(-6px);
+            box-shadow:0 10px 25px rgba(0,0,0,.08);
+        }
+
+        span{
+            font-size:32px;
+            font-weight:600;
+            color:var(--accent);
+        }
+
+        h3{
+            font-size:22px;
+        }
+
+        p{
+            color:#6b7280;
+        }
+    }
+}
+
+/* đánh giá */
+.feedback{
+    padding:80px 80px;
+    display:flex;
+    flex-direction:column;
+    gap:60px;
+    .section-title{
+        text-align:center;
+
+        h2{
+            font-size:48px;
+        }
+    }
+    .feedback-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .feedback-card {
+        background: var(--card);
+        padding: 30px;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .user{
+            display:flex;
+            align-items:center;
+            gap:12px;
+
+            img{
+            width:50px;
+            height:50px;
+            border-radius:50%;
+            object-fit:cover;
+            }
+
+            h4{
+            color:var(--accent);
+            font-size:16px;
+            }
+        }
+
+        p{
+            color:#6b7280;
+            line-height:1.5;
+        }
+    }
+}
+
+/* liên hệ */
+.contact-wrapper {
+    display: flex;
+    gap: 50px;
+}
+.contact-info{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2{
+        font-size: 60px;
+    }
+    p{
+        font-size: 20px;
+    }
+}
+.contact-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    input, textarea {
+        padding: 12px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        font-family: inherit;
+    }
+
+    textarea {
+        min-height: 120px;
+    }
+
+    button {
+        padding: 12px;
+        border: none;
+        background: var(--accent);
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+}
+
+/* footer */
+footer {
+    background: var(--primary);
+    color: white;
+    padding: 60px 80px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-bottom: 30px;
+
+      div{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      h3{
+        font-size: 30px;
+      }
+      h4{
+        font-size: 30px;
+        font-weight: 700;
+      }
+
+      a{
+        color: white;
+        text-decoration: none;
+      }
+    }
+    .copyright{
+        text-align: center;
+    }
+}

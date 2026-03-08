@@ -9,7 +9,6 @@ const previewBox = document.querySelector(".image-preview");
 let editCarId = null;
 let selectedImages = [];
 
-/* ================= RENDER ================= */
 const renderCars = () => {
     carList.innerHTML = cars.map(car => `
         <div class="carList-box">
@@ -26,6 +25,7 @@ const renderCars = () => {
                     <p>Hộp số: ${car.transmission}</p>
                 </div>
             </div>
+
             <div class="car-actions">
                 <button class="edit-car" data-id="${car.id}">Sửa</button>
                 <button class="delete-car" data-id="${car.id}">Xoá</button>
@@ -34,15 +34,34 @@ const renderCars = () => {
     `).join("");
 };
 
-/* ================= XỬ LÝ ẢNH ================= */
+// xoá dữ liệu trong form
+const resetCarForm = () => {
+    document
+        .querySelectorAll("#car-modal input, #car-modal textarea")
+        .forEach(el => el.value = "");
+
+    previewBox.innerHTML = "";
+    selectedImages = [];
+    imageInput.value = "";
+    editCarId = null;
+};
+
+const openCarModal = () => {
+    carModal.style.display = "flex";
+};
+
+const closeCar = () => {
+    carModal.style.display = "none";
+    resetCarForm();
+};
+
+// handle ảnh
 imageInput.addEventListener("change", (e) => {
     const files = Array.from(e.target.files);
-
     files.forEach(file => {
         const reader = new FileReader();
         reader.onload = () => {
             selectedImages.push(reader.result);
-
             const img = document.createElement("img");
             img.src = reader.result;
             img.classList.add("preview-img");
@@ -52,46 +71,45 @@ imageInput.addEventListener("change", (e) => {
     });
 });
 
-/* ================= MODAL ================= */
-const openCarModal = () => carModal.style.display = "flex";
-
-const closeCar = () => {
-    carModal.style.display = "none";
-    previewBox.innerHTML = "";
-    selectedImages = [];
-};
-
-/* ================= ADD ================= */
+// thêm xe
 const addCar = (data) => {
     const newCar = {
         id: cars.length ? cars[cars.length - 1].id + 1 : 1,
         ...data,
         status: "available",
+
         image: selectedImages
     };
+
     cars.push(newCar);
+
 };
 
-/* ================= UPDATE ================= */
+// sửa thông tin xe
 const updateCar = (id, data) => {
+
     const car = cars.find(c => c.id === id);
+
     if (!car) return;
 
     Object.assign(car, data);
 
-    // Nếu có ảnh mới thì thay
     if (selectedImages.length) {
         car.image = selectedImages;
     }
+
 };
 
-/* ================= DELETE ================= */
+// xoá xe
 const deleteCar = (id) => {
+
     cars = cars.filter(car => car.id !== id);
+
 };
 
-/* ================= SAVE ================= */
+//lưu
 const handleSaveCar = () => {
+
     const brand = document.querySelector("#brand").value.trim();
     const model = document.querySelector("#model").value.trim();
     const year = document.querySelector("#year").value.trim();
@@ -104,37 +122,47 @@ const handleSaveCar = () => {
         return;
     }
 
-    const carData = { brand, model, year, price, transmission, description };
-
+    const carData = {
+        brand,
+        model,
+        year,
+        price,
+        transmission,
+        description
+    };
     if (editCarId !== null) {
         updateCar(editCarId, carData);
-        editCarId = null;
     } else {
         addCar(carData);
     }
-
     saveCars();
     renderCars();
     closeCar();
 
-    document.querySelectorAll("#car-modal input, #car-modal textarea")
-        .forEach(el => el.value = "");
 };
 
-/* ================= CLICK ================= */
 carList.addEventListener("click", (e) => {
     const id = Number(e.target.dataset.id);
-
+    
+    // xoá
     if (e.target.classList.contains("delete-car")) {
+
         if (confirm("Bạn có chắc muốn xoá xe?")) {
+
             deleteCar(id);
+
             saveCars();
+
             renderCars();
+
         }
+
     }
 
+    // sửa
     if (e.target.classList.contains("edit-car")) {
         const car = cars.find(c => c.id === id);
+        if (!car) return;
         editCarId = id;
 
         document.querySelector("#brand").value = car.brand;
@@ -146,24 +174,21 @@ carList.addEventListener("click", (e) => {
 
         selectedImages = car.image || [];
         previewBox.innerHTML = "";
-
         selectedImages.forEach(img => {
             const image = document.createElement("img");
             image.src = img;
             image.classList.add("preview-img");
             previewBox.appendChild(image);
         });
-
         openCarModal();
     }
 });
 
-/* ================= EVENT ================= */
+// Bắt sự kiện click
 addCarBtn.addEventListener("click", () => {
-    editCarId = null;
+    resetCarForm();
     openCarModal();
 });
-
 closeCarModal.addEventListener("click", closeCar);
 saveCarBtn.addEventListener("click", handleSaveCar);
 
